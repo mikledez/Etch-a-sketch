@@ -1,20 +1,23 @@
+* {
+    box-sizing: border-box;
+}
+
 #container {
 
     display: flex;
     flex-wrap: wrap;
 
+
     border: 1px solid grey;
     margin: auto;
     width: 60%;
-    padding: 10px;
+    height: 60%;
 
 }
 
 .innerBox {
-    height: 25px;
-    width: 25px;
-    border: 1px solid blue;
-    display: flex;
+
+    flex: 0 0 calc(100% / 16);
     background-color: gray;
     border: 1px solid black;
 }

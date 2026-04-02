@@ -8,5 +8,6 @@ if (size == "16x16") {
 
         const parent = document.getElementById("container");
         parent.appendChild(newDiv);
+        console.log(i + 1);
     }
 }
