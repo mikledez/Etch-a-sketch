@@ -40,15 +40,13 @@ body {
     display: flex;
     flex-wrap: wrap;
 
-    border: 1px solid grey;
-
     width: 350px;
     height: 350px;
 }
 
 .innerBox {
     flex: 0 0 calc(100% / var(--size));
-    background-color: gray;
+    background-color: white;
     border: 1px solid black;
 }
 
