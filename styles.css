@@ -82,7 +82,7 @@ body {
 .buttons {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 15px;
 }
 
 #clearBtn,
@@ -129,7 +129,6 @@ body {
 .modeBtns {
     display: flex;
     flex-direction: column;
-    gap: 5px;
 }
 
 #label {
