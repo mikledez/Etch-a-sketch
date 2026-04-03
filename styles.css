@@ -17,7 +17,7 @@ body {
     margin-top: 0%;
 }
 
-.boxSize {
+#boxSize {
     display: flex;
     justify-self: center;
     justify-content: center;
@@ -47,7 +47,7 @@ body {
 .innerBox {
     flex: 0 0 calc(100% / var(--size));
     background-color: white;
-    border: 1px solid black;
+    user-select: none;
 }
 
 .content {
