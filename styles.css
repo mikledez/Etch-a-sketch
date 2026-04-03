@@ -109,7 +109,11 @@ body {
 }
 
 #blackBtn {
-    margin-top: 10px;
+    margin-top: 15px;
+}
+
+#randomBtn {
+    margin-top: 2px;
 }
 
 #clearBtn:hover,
