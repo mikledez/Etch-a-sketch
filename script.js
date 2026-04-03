@@ -1,13 +1,12 @@
-let size = "16x16";
+let newSize = 8;
+document.documentElement.style.setProperty('--size', `${newSize}`);
 
 
-if (size == "16x16") {
-    for (i = 0; i < 256; i++) {
-        const newDiv = document.createElement("div");
-        newDiv.className = "innerBox";
+for (i = 0; i < newSize * newSize; i++) {
+    const newDiv = document.createElement("div");
+    newDiv.className = "innerBox";
 
-        const parent = document.getElementById("container");
-        parent.appendChild(newDiv);
-        console.log(i + 1);
-    }
+    const parent = document.getElementById("container");
+    parent.appendChild(newDiv);
+    console.log(i + 1);
 }

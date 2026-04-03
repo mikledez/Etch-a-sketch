@@ -1,23 +1,141 @@
+:root {
+    --size: 16;
+    --bgcolor: rgb(255, 230, 168);
+}
+
 * {
     box-sizing: border-box;
 }
 
-#container {
+body {
+    background-color: rgb(165, 165, 165);
+}
 
+.title {
+    text-align: center;
+    font-size: 80px;
+    margin-top: 0%;
+}
+
+.boxSize {
+    display: flex;
+    justify-self: center;
+    justify-content: center;
+
+    font-size: 50px;
+
+    border-radius: 20px;
+    background-color: var(--bgcolor);
+    margin-bottom: 10px;
+    width: 200px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.gridWrapper {
+    display: flex;
+    justify-content: center;
+}
+
+#container {
     display: flex;
     flex-wrap: wrap;
 
-
     border: 1px solid grey;
-    margin: auto;
-    width: 60%;
-    height: 60%;
 
+    width: 350px;
+    height: 350px;
 }
 
 .innerBox {
-
-    flex: 0 0 calc(100% / 16);
+    flex: 0 0 calc(100% / var(--size));
     background-color: gray;
     border: 1px solid black;
+}
+
+.content {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    max-width: 660px;
+    margin: 0 auto;
+}
+
+.options {
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-right: 20px;
+    padding: 20px;
+
+    background-color: rgb(255, 255, 255);
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 120px;
+}
+
+#clearBtn {
+    background-color: var(--bgcolor);
+
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+
+    color: black;
+    font-weight: bold;
+    font-size: 14px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0 auto;
+
+    transition: 0.2s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+#clearBtn:hover {
+    background-color: rgb(174, 157, 113);
+    transform: scale(1.05);
+}
+
+#sizeSlider {
+    -webkit-appearance: none;
+    appearance: none;
+
+    width: 100%;
+    height: 8px;
+
+    background: #ddd;
+    border-radius: 5px;
+    outline: none;
+}
+
+#sizeSlider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+
+    width: 18px;
+    height: 18px;
+
+    background: #333;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+#sizeSlider::-moz-range-thumb {
+    width: 18px;
+    height: 18px;
+
+    background: #333;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+button,
+input {
+    border: none;
+    cursor: pointer;
 }
