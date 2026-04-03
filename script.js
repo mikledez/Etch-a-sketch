@@ -1,4 +1,5 @@
 function getRandomColor() {
+
     const r = Math.floor(Math.random() * 256);
     const g = Math.floor(Math.random() * 256);
     const b = Math.floor(Math.random() * 256);
@@ -6,47 +7,50 @@ function getRandomColor() {
     return `rgb(${r}, ${g}, ${b})`;
 }
 
-function clearGrid(box) {
+function clearGrid() {
+
+    const box = document.querySelectorAll('.innerBox');
 
     box.forEach((div) => {
         div.style.backgroundColor = 'white';
     });
-    box.style.backgroundColor = 'white';
+}
+
+function loadGrid(size) {
+    const container = document.getElementById("container");
+
+    container.innerHTML = "";
+
+    document.documentElement.style.setProperty('--size', size);
+
+    for (i = 0; i < size * size; i++) {
+        const newDiv = document.createElement("div");
+        newDiv.className = "innerBox";
+
+        newDiv.addEventListener('mouseenter', () => {
+            newDiv.style.backgroundColor = getRandomColor();
+        });
+        container.appendChild(newDiv);
+    }
 }
 
 //declarations
-let newSize = 10;
-document.documentElement.style.setProperty('--size', `${newSize}`);
+let size = 16;
+document.documentElement.style.setProperty('--size', `${size}`);
+loadGrid(size);
 
 const clearBtn = document.getElementById("clearBtn");
+const slider = document.getElementById("sizeSlider");
 
 
-//------------------
-
-
-//Load Grid Size block
-for (i = 0; i < newSize * newSize; i++) {
-    const newDiv = document.createElement("div");
-    newDiv.className = "innerBox";
-
-    const parent = document.getElementById("container");
-    parent.appendChild(newDiv);
-    console.log(i + 1);
-}
-//------------------
-
-const box = document.querySelectorAll('.innerBox');
-//Color box block
-box.forEach((div) => {
-    div.addEventListener('mouseenter', () => {
-        div.style.backgroundColor = getRandomColor();
-    });
+slider.addEventListener('input', () => {
+    size = slider.value;
+    loadGrid(size);
 });
-//-------------------
 
 
 //clear Grid block
 clearBtn.addEventListener('click', function () {
-    clearGrid(box);
+    clearGrid();
 });
-//------
+//-----------
